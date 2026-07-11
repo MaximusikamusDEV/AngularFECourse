@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-bar__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+
+  color: #ffffff;
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: rgb(255 255 255 / 14%);
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 2px;
+  }
+}
+
+.nav-bar__link--active {
+  background: #1d4ed8;
+}
