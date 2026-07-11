@@ -9,12 +9,12 @@ import {FooterComponent} from '../footer/footer.component';
 import {HomeComponent} from './component/home/home.component';
 import {HomeRoutingModule} from './home-routing.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {SearchBoxComponent} from '../search-box/search-box.component';
 import {FiltersComponent} from '../filters/filters.component';
 import {AddToCartComponent} from '../add-to-cart/add-to-cart.component';
 import {LogoutComponent} from '../logout/logout.component';
 import {EditProductComponent} from '../edit-product/edit-product.component';
 import {DeleteProductComponent} from '../delete-product/delete-product.component';
+import {SearchBoxComponent} from '../search-box/search-box.component';
 
 
 @NgModule({

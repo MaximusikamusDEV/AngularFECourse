@@ -1,10 +1,11 @@
+import {ProductRating} from './product-rating';
+
 export interface Product {
   id: number;
   title: string;
   price: number;
   description: string;
-  imageUrl?: string;
+  image?: string;
   stock?: number;
-  ratingRate?: number;
-  ratingCount?: number;
+  rating?: ProductRating;
 }

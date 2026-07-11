@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,5 +8,10 @@ import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
   styleUrl: './search-box.component.scss'
 })
 export class SearchBoxComponent {
-protected readonly faMagnifyingGlass = faMagnifyingGlass;
+  protected readonly faMagnifyingGlass = faMagnifyingGlass;
+  @Output() searchQueryChange: EventEmitter<string> = new EventEmitter();
+
+  onSearchQueryChange(value: string) {
+    this.searchQueryChange.emit(value);
+  }
 }

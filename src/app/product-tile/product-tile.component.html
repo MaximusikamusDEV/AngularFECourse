@@ -2,28 +2,34 @@
   <a class="product-card__image-link" href="#">
     <img
       class="product-card__image"
-      src=""
-      alt="Product name"
+      [src]="product.image"
+      [alt]="product.title"
     />
   </a>
 
   <div class="product-card__content">
     <a class="product-card__title" href="#">
-      Product name
+      {{ product.title }}
     </a>
 
     <div class="product-card__meta">
       <span class="product-card__rating">
-        <fa-icon [icon]="faStarSolid" /> 4.5
+        <fa-icon [icon]="faStarSolid"/>
+        {{ product.rating?.rate }}
       </span>
 
-      <strong class="product-card__price">$93.50</strong>
+      <strong class="product-card__price">
+        {{ product.price | currency: 'USD' }}
+      </strong>
     </div>
 
     <div class="product-card__actions">
       <app-add-to-cart></app-add-to-cart>
       <app-edit-product></app-edit-product>
-      <app-delete-product></app-delete-product>
+      <app-delete-product
+        [productId]="product.id"
+        (deleteProduct)="onDelete($event)">
+      </app-delete-product>
     </div>
   </div>
 </article>

@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (searchQueryChange)="onSearchQueryChange($event)"></app-header>
 
 <main class="home-page">
   <app-filters class="filters"></app-filters>
@@ -9,43 +9,11 @@
     </div>
 
     <div class="product__grid">
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
-      </app-product-tile>
-
-      <app-product-tile>
+      <app-product-tile
+      *ngFor="let product of products | productFilter: searchQuery"
+      [product]="product"
+      (deleteProduct)="onDelete($event)"
+      [routerLink]="['/product', product.id]">
       </app-product-tile>
     </div>
   </section>
