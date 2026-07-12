@@ -1,0 +1,21 @@
+<p class="product-stock">
+  <span class="product-stock__label">Availability:</span>
+
+
+  <span
+    class="product-stock__value"
+    [stock]="stock">
+
+  <ng-container *ngIf="stock >= 10">
+    In Stock
+  </ng-container>
+
+  <ng-container *ngIf="stock >= 1 && stock < 10">
+    Almost sold out
+  </ng-container>
+
+  <ng-container *ngIf="stock === 0">
+    Out of stock
+  </ng-container>
+ </span>
+</p>

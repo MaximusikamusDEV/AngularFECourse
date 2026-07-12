@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
-import {Product} from '../shared/models/product';
+import {Product} from '../shared/models/product/product';
 
 @Component({
   selector: 'app-product-tile',

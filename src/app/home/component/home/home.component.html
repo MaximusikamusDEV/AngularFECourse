@@ -12,8 +12,7 @@
       <app-product-tile
       *ngFor="let product of products | productFilter: searchQuery"
       [product]="product"
-      (deleteProduct)="onDelete($event)"
-      [routerLink]="['/product', product.id]">
+      (deleteProduct)="onDelete($event)">
       </app-product-tile>
     </div>
   </section>

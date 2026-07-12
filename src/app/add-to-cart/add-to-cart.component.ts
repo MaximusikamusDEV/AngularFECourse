@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 
 @Component({
@@ -10,6 +10,8 @@ import {Component, EventEmitter, Output} from '@angular/core';
 export class AddToCartComponent {
   count = 0;
   @Output() countChange = new EventEmitter<number>();
+  @Input({required: true}) stock!: number;
+
 
   cartIncrement(){
     this.count++;

@@ -1,5 +1,5 @@
 <article class="product-card">
-  <a class="product-card__image-link" href="#">
+  <a class="product-card__image-link" [routerLink]="['/product', product.id]">
     <img
       class="product-card__image"
       [src]="product.image"
@@ -8,7 +8,9 @@
   </a>
 
   <div class="product-card__content">
-    <a class="product-card__title" href="#">
+    <a class="product-card__title"
+    [routerLink]="['/product', product.id]"
+    >
       {{ product.title }}
     </a>
 
@@ -24,7 +26,7 @@
     </div>
 
     <div class="product-card__actions">
-      <app-add-to-cart></app-add-to-cart>
+      <app-add-to-cart [stock]="product.stock"></app-add-to-cart>
       <app-edit-product></app-edit-product>
       <app-delete-product
         [productId]="product.id"
