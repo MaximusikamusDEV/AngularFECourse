@@ -12,6 +12,15 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## Running mockup back server
+
+For running mickup backend server use:
+
+```bash
+npx json-server db.json
+```
+Once the server is running, you can get data from `http://localhost:3000/`
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
@@ -51,6 +60,7 @@ For end-to-end (e2e) testing, run:
 ```bash
 ng e2e
 ```
+
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
