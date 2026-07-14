@@ -1,0 +1,24 @@
+<section class="product-review">
+  <div clsas="product-reviews__header">
+    <h2 class="product-reviews__title">
+      Customer reviews
+    </h2>
+
+    <span *ngIf="reviews.length > 0" class="product-reviews__count">
+      {{reviews.length}}
+    </span>
+  </div>
+
+  <div *ngIf="reviews.length > 0; else noReviews" class="product-reviews__list">
+    <app-review-item
+      *ngFor="let review of reviews"
+      [review]="review">
+    </app-review-item>
+  </div>
+
+  <ng-template #noReviews>
+    <p class="produc-reviews__empty">
+      There are no reviews for this product yet.
+    </p>
+  </ng-template>
+</section>

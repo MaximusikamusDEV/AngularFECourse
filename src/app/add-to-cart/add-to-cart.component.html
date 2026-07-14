@@ -1,6 +1,15 @@
-<ng-container *ngIf="count === 0">
+<ng-container *ngIf="count === 0 && stock > 0">
   <button (click)="cartIncrement()" class="add-to-cart" type="button">
     Add to cart
+  </button>
+</ng-container>
+
+<ng-container *ngIf="stock === 0">
+  <button
+    class="add-to-cart__out-of-stock"
+    type="button"
+    disabled>
+    Out of stock
   </button>
 </ng-container>
 

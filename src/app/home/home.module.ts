@@ -19,18 +19,15 @@ import {SearchBoxComponent} from '../search-box/search-box.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
     HomeComponent,
-    NavBarComponent,
     ProductTileComponent,
-    MiniCartComponent,
-    FooterComponent,
-    SearchBoxComponent,
     FiltersComponent,
-    AddToCartComponent,
-    LogoutComponent,
     EditProductComponent,
     DeleteProductComponent,
+  ],
+  exports: [
+    AddToCartComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

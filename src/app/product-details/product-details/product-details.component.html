@@ -1,1 +1,51 @@
-<p>product-details works!</p>
+<app-header></app-header>
+<main class="product-details">
+  <section class="product-details">
+    <div class="product-details__main">
+      <div class="product-details__image-background">
+        <img
+          class="product-details__image"
+          [src]="product.image"
+          [alt]="product.title"
+        />
+      </div>
+
+      <div class="product-details__info">
+        <h1 class="product-details__title">
+          {{ product.title }}
+        </h1>
+
+        <div class="product-details__rating">
+          <fa-icon [icon]="faStarSolid"></fa-icon>
+
+          <span>{{ product.rating?.rate }}</span>
+
+          <span>({{ product.rating?.count }} Reviews)</span>
+        </div>
+
+        <div class="product-details__price">
+          {{product.price | currency: 'USD'}}
+        </div>
+
+        <app-product-stock [stock]="product.stock"></app-product-stock>
+
+        <div class="product-details__cart">
+          <app-add-to-cart [stock]="product.stock"></app-add-to-cart>
+        </div>
+      </div>
+    </div>
+
+    <section class="product-details__description">
+      <h2>Description</h2>
+      <p>{{ product.description }}</p>
+    </section>
+
+    <app-product-reviews [reviews]="reviews"></app-product-reviews>
+  </section>
+
+  <ng-template #loading>
+    <p class="product-details__loading">Loading product</p>
+  </ng-template>
+</main>
+
+<app-footer></app-footer>
