@@ -1,5 +1,64 @@
-<h2 class="filters__title">FILTERS</h2>
+<form class="filters__form" [formGroup]="filterForm" (ngSubmit)="applyFilters()">
+  <fieldset class="filters__group">
+    <legend class="filters__label">Price, USD</legend>
 
-<p class="filters__hint">
-  Filters will be added later.
-</p>
+    <div class="filters__range">
+      <input
+        type="number"
+        placeholder="From"
+        min="0"
+        formControlName="priceFrom"/>
+
+      <input
+        type="number"
+        placeholder="To"
+        min="0"
+        formControlName="priceTo"/>
+    </div>
+  </fieldset>
+
+  <fieldset class="filters__group">
+    <legend class="filters__label">Rating</legend>
+
+    <div class="filters__range">
+      <input
+        type="number"
+        placeholder="From"
+        min="0"
+        max="5"
+        step="0.1"
+        formControlName="ratingFrom"
+      />
+
+      <input
+        type="number"
+        placeholder="To"
+        min="0"
+        max="5"
+        step="0.1"
+        formControlName="ratingTo"/>
+    </div>
+  </fieldset>
+
+  <div class="filters__checkboxes">
+    <label class="filters__checkbox">
+      <input type="checkbox" formControlName="inStock"/>
+      Only in Stock
+    </label>
+
+    <label class="filters__checkbox">
+      <input type="checkbox" formControlName="hasReviews"/>
+      Only with reviews
+    </label>
+  </div>
+
+  <div class="filters__actions">
+    <button class="filters__apply" type="submit">
+      Apply filters
+    </button>
+
+    <button class="filters__clear" type="button" (click)="clearFilters()">
+      Clear all
+    </button>
+  </div>
+</form>
