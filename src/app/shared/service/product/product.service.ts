@@ -48,4 +48,8 @@ export class ProductService {
   getProductById(id: number): Observable<Product> {
     return this.http.get<Product>(this.apiUrl + `/${id}`);
   }
+
+  updateProduct(product: Product): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${product.id}`, product);
+  }
 }

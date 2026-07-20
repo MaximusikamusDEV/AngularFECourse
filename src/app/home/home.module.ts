@@ -11,8 +11,6 @@ import {HomeRoutingModule} from './home-routing.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FiltersComponent} from '../filters/filters.component';
 import {AddToCartComponent} from '../add-to-cart/add-to-cart.component';
-import {LogoutComponent} from '../logout/logout.component';
-import {EditProductComponent} from '../edit-product/edit-product.component';
 import {DeleteProductComponent} from '../delete-product/delete-product.component';
 import {SearchBoxComponent} from '../search-box/search-box.component';
 import {ReactiveFormsModule} from "@angular/forms";
@@ -24,7 +22,6 @@ import {AppliedFilterBadgesComponent} from '../applied-filter-badges/applied-fil
     HomeComponent,
     ProductTileComponent,
     FiltersComponent,
-    EditProductComponent,
     DeleteProductComponent,
   ],
   exports: [

@@ -1,0 +1,164 @@
+<app-header></app-header>
+<body>
+<div class="edit-product-page" *ngIf="product as editProduct">
+  <form
+    #editForm="ngForm"
+    class="edit-product-form"
+    (ngSubmit)="saveProduct(editForm)">
+
+    <h1>Edit product</h1>
+
+    <div class="edit-product-form__field">
+      <label class="edit-product-form__label" for="image">
+        Product image URL
+      </label>
+
+      <input
+        id="imageUrl"
+        class="edit-product-form__input"
+        type="text"
+        name="image"
+        [(ngModel)]="editProduct.image"
+        required
+        #image="ngModel"
+        [class.edit-product-form__input--invalid]="image.invalid && (image.touched || editForm.submitted)"
+      />
+
+      <p
+        *ngIf="image.invalid && (image.touched || editForm.submitted)"
+        class="edit-product-form__error">
+        Image is required
+      </p>
+    </div>
+
+    <div class="edit-product-form__field">
+      <label class="edit-product-form__label" for="title">
+        Product title
+      </label>
+
+
+      <input
+        id="title"
+        class="edit-product-form__input"
+        type="text"
+        name="title"
+        [(ngModel)]="editProduct.title"
+        required
+        #title="ngModel"
+        [class.edit-product-form__input--invalid]="title.invalid && (title.touched || editForm.submitted)"
+      />
+
+      <p
+        *ngIf="title.invalid && (title.touched || editForm.submitted)"
+        class="edit-product-form__error">
+        Name is required
+      </p>
+    </div>
+
+    <div class="edit-product-form__field">
+      <label class="edit-product-form__label" for="price">
+        Product price
+      </label>
+
+
+      <input
+        id="price"
+        class="edit-product-form__input"
+        type="number"
+        name="price"
+        [(ngModel)]="editProduct.price"
+        required
+        #price="ngModel"
+        pattern="^[0-9]+(\.[0-9]+)?$"
+        min="0"
+        [class.edit-product-form__input--invalid]="price.invalid && (price.touched || editForm.submitted)"
+      />
+
+      <p
+        *ngIf="price.invalid && (price.touched || editForm.submitted)"
+        class="edit-product-form__error">
+      <span *ngIf="price.errors?.['required']">
+        Price is required
+      </span>
+
+        <span *ngIf="price.errors?.['min']">
+        Price can't be lower than 0
+        </span>
+
+        <span *ngIf="price.errors?.['pattern']">
+        Enter integer or decimal value, for instance 123 or 123.4
+      </span>
+      </p>
+    </div>
+
+    <div class="edit-product-form__field">
+      <label class="edit-product-form__label" for="stock">
+        Product stock
+      </label>
+
+
+      <input
+        id="stock"
+        class="edit-product-form__input"
+        type="number"
+        name="stock"
+        [(ngModel)]="editProduct.stock"
+        required
+        pattern="^[0-9]+$"
+        min="0"
+        #stock="ngModel"
+        [class.edit-product-form__input--invalid]="stock.invalid && (stock.touched || editForm.submitted)"
+      />
+
+      <p
+        *ngIf="stock.invalid && (stock.touched || editForm.submitted)"
+        class="edit-product-form__error">
+
+      <span *ngIf="stock.errors?.['required']">
+        Stock is required
+      </span>
+
+        <span *ngIf="stock.errors?.['min']">
+        Stock can't be lower than 0.
+      </span>
+
+        <span *ngIf="stock.errors?.['pattern']">
+        Enter integer value, for instance 123
+      </span>
+      </p>
+    </div>
+
+    <div class="edit-product-form__field">
+      <label class="edit-product-form__label" for="">
+        Product description
+      </label>
+
+
+      <textarea
+        id="description"
+        class="edit-product-form__input"
+        name="description"
+        rows="4"
+        [(ngModel)]="editProduct.description">
+    </textarea>
+    </div>
+
+    <button
+      class="edit-product-form__button"
+      type="submit"
+      [disabled]="editForm.invalid">
+      Save changes
+    </button>
+  </form>
+
+  <div class="edit-product-preview">
+    <img
+      class="edit-product-preview__image"
+      [src]="editProduct.image"
+      [alt]="editProduct.title">
+  </div>
+
+</div>
+</body>
+
+<app-footer></app-footer>
