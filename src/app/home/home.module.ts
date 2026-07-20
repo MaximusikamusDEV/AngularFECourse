@@ -15,6 +15,8 @@ import {LogoutComponent} from '../logout/logout.component';
 import {EditProductComponent} from '../edit-product/edit-product.component';
 import {DeleteProductComponent} from '../delete-product/delete-product.component';
 import {SearchBoxComponent} from '../search-box/search-box.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {AppliedFilterBadgesComponent} from '../applied-filter-badges/applied-filter-badges.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import {SearchBoxComponent} from '../search-box/search-box.component';
     SharedModule,
     HomeRoutingModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
+    AppliedFilterBadgesComponent,
   ]
 })
 export class HomeModule { }

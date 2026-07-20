@@ -1,0 +1,57 @@
+<div class="active-filters" *ngIf="hasActiveFilters()">
+  <span class="active-filters__label">Applied filters:</span>
+
+  <button
+    *ngIf="filters.priceFrom !== null"
+    class="active-filters__badge"
+    type="button"
+    (click)="removeFilter('priceFrom')">
+    Price from: {{filters.priceFrom}}
+    <fa-icon [icon]="faXMark" aria-hidden="true"></fa-icon>
+  </button>
+
+  <button
+    *ngIf="filters.priceTo !== null"
+    class="active-filters__badge"
+    type="button"
+    (click)="removeFilter('priceTo')">
+    Price to: {{filters.priceTo}}
+    <fa-icon [icon]="faXMark" aria-hidden="true"></fa-icon>
+  </button>
+
+  <button
+    *ngIf="filters.ratingFrom !== null"
+    class="active-filters__badge"
+    type="button"
+    (click)="removeFilter('ratingFrom')">
+    Rating from: {{filters.ratingFrom}}
+    <fa-icon [icon]="faXMark" aria-hidden="true"></fa-icon>
+  </button>
+
+  <button
+    *ngIf="filters.ratingTo !== null"
+    class="active-filters__badge"
+    type="button"
+    (click)="removeFilter('ratingTo')">
+    Rating to: {{filters.ratingTo}}
+    <fa-icon [icon]="faXMark" aria-hidden="true"></fa-icon>
+  </button>
+
+  <button
+    *ngIf="filters.inStock"
+    class="active-filters__badge"
+    type="button"
+    (click)="removeFilter('inStock')">
+    Only in Stock
+    <fa-icon [icon]="faXMark" aria-hidden="true"></fa-icon>
+  </button>
+
+  <button
+    *ngIf="filters.hasReviews"
+    class="active-filters__badge"
+    type="button"
+    (click)="removeFilter('hasReviews')">
+    Only with Reviews
+    <fa-icon [icon]="faXMark" aria-hidden="true"></fa-icon>
+  </button>
+</div>

@@ -1,11 +1,31 @@
 <app-header (searchQueryChange)="onSearchQueryChange($event)"></app-header>
 
 <main class="home-page">
-  <app-filters class="filters"></app-filters>
+  <app-filters class="filters"
+  (appliedFilters)="applyFilters($event)"
+  (clearedFilters)="clearFilters()"
+  [filtersToForm]="activeFilters"></app-filters>
 
   <section class="products">
     <div class="products__toolbar">
       <h1>Products</h1>
+    </div>
+
+    <app-applied-filter-badges
+      [filters]="activeFilters"
+      (filterRemoved)="removeFilter($event)"></app-applied-filter-badges>
+
+    <div class="products__result" *ngIf="filtersWereApplied">
+      <p class="products__found" *ngIf="products.length > 0; else noProducts">
+        Found {{ products.length }}
+        {{ products.length === 1 ? 'product' : 'products' }}
+      </p>
+
+      <ng-template #noProducts>
+        <p class="products__empty">
+          No products found with selected filters.
+        </p>
+      </ng-template>
     </div>
 
     <div class="product__grid">
