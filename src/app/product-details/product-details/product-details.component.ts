@@ -32,7 +32,6 @@ export class ProductDetailsComponent implements OnInit {
 
       this.productId = Number(id);
       this.productService.getProductById(this.productId).subscribe(product => {this.product = product;});
-      console.log(this.product);
       this.reviewService.getReviewsByProductId(this.productId).subscribe(reviews => {this.reviews = reviews;});
     })
   }
