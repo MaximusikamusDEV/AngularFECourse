@@ -37,8 +37,6 @@ export class ProductEditComponent implements OnInit {
       return;
     }
 
-    this.product.stock = Number(this.product.stock);
-    this.product.price = Number(this.product.price);
     this.productService.updateProduct(this.product).subscribe(() => {
       this.router.navigate(['/product/edit', this.productId]);
     })
