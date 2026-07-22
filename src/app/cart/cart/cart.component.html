@@ -1,0 +1,32 @@
+<app-header></app-header>
+<body>
+<div class="cart-page">
+  <div class="cart-page__header">
+    <h1 class="cart-page__title">Cart</h1>
+  </div>
+
+  <div class="cart-page__content"
+  *ngIf="cart?.products?.length; else emptyCart">
+    <div class="cart-table__header">
+      <span class="cart-table__cell cart-table__cell--id">Product ID</span>
+      <span class="cart-table__cell cart-table__cell--name">Product name</span>
+      <span class="cart-table__cell cart-table__cell--count">Count</span>
+      <span class="cart-table__cell cart-table__cell--price">Price</span>
+      <span class="cart-table__cell cart-table__cell--total">Total price</span>
+      <span class="cart-table__cell cart-table__cell--actions"></span>
+    </div>
+
+    <app-cart-product
+      *ngFor="let cartProduct of pagedCartProducts"
+      [cartProduct]="cartProduct">
+    </app-cart-product>
+
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Your cart is empty</p>
+  </ng-template>
+</div>
+
+</body>
+<app-footer></app-footer>

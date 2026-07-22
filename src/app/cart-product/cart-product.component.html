@@ -1,0 +1,12 @@
+<ul class="cart-table__body">
+  <li class="cart-row">
+    <span class="cart-row__cell cart-row__cell--id">{{cartProduct.id}}</span>
+    <span class="cart-row__cell cart-row__cell--name">{{cartProduct.title}}</span>
+    <span class="cart-row__cell cart-row__cell--count">{{cartProduct.count}}</span>
+    <span class="cart-row__cell cart-row__cell--price">{{cartProduct.price}}</span>
+    <span class="cart-row__cell cart-row__cell--total">{{cartProduct.price * cartProduct.count}}</span>
+    <button class="cart-row__remove" type="button" aria-label="Remove from cart">
+      <fa-icon [icon]="faXMark" aria-hidden="true"></fa-icon>
+    </button>
+  </li>
+</ul>

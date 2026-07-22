@@ -10,6 +10,7 @@ import {NavBarComponent} from '../nav-bar/nav-bar.component';
 import {LogoutComponent} from '../logout/logout.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {AvailabilityColorDirective} from './directives/availability-color/availability-color.directive';
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -23,10 +24,11 @@ import {AvailabilityColorDirective} from './directives/availability-color/availa
     NavBarComponent,
     AvailabilityColorDirective
   ],
-  imports: [
-    CommonModule,
-    FontAwesomeModule,
-  ],
+    imports: [
+        CommonModule,
+        FontAwesomeModule,
+        RouterLink,
+    ],
   exports: [
     ProductFilterPipe,
     FooterComponent,

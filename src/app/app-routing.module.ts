@@ -16,6 +16,11 @@ const routes: Routes = [
     path: 'product/edit/:id',
     loadChildren: () =>
       import('./product-edit/product-edit.module').then((module) => module.ProductEditModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () =>
+      import('./cart/cart.module').then((module) => module.CartModule)
   }
 ];
 
