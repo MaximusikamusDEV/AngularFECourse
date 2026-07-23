@@ -1,4 +1,4 @@
-<app-header (searchQueryChange)="onSearchQueryChange($event)"></app-header>
+<app-header (searchQueryChange)="onSearchQueryChange($event)" [countInCart]="cartCountChange"></app-header>
 
 <main class="home-page">
   <app-filters class="filters"
@@ -32,7 +32,8 @@
       <app-product-tile
       *ngFor="let product of products | productFilter: searchQuery"
       [product]="product"
-      (deleteProduct)="onDelete($event)">
+      (deleteProduct)="onDelete($event)"
+      (countInCart)="onCartCountChange($event)">
       </app-product-tile>
     </div>
   </section>

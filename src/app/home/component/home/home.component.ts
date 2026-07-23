@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, EventEmitter, inject, Input, OnInit, Output} from '@angular/core';
 import {ProductService} from '../../../shared/service/product/product.service';
 import {Product} from '../../../shared/models/product/product';
 import {ProductFilters} from '../../../shared/models/product/product-filters';
@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   products: Product[] = [];
   searchQuery: string = '';
   filtersWereApplied: boolean = false;
+  @Output() cartCountChange = 0;
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
@@ -125,6 +126,10 @@ export class HomeComponent implements OnInit {
         hasReviews: filters.hasReviews ? true : null
       }
     });
+  }
+
+  onCartCountChange(count: number) {
+    this.cartCountChange = count;
   }
 
   clearUrlFromFilters() {

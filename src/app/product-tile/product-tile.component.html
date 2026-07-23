@@ -26,7 +26,11 @@
     </div>
 
     <div class="product-card__actions">
-      <app-add-to-cart [stock]="product.stock"></app-add-to-cart>
+      <app-add-to-cart
+        [stock]="product.stock"
+        (countChange)="onCountChange($event)"
+        [count]="countInCart"
+      ></app-add-to-cart>
 
       <a class="edit-product"
          type="button"

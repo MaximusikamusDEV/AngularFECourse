@@ -8,10 +8,9 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrl: './add-to-cart.component.scss'
 })
 export class AddToCartComponent {
-  count = 0;
   @Output() countChange = new EventEmitter<number>();
   @Input({required: true}) stock!: number;
-
+  @Input({required: true}) count: number = 0;
 
   cartIncrement(){
     this.count++;
