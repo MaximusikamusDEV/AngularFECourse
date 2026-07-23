@@ -5,7 +5,7 @@
     <span class="cart-row__cell cart-row__cell--count">{{cartProduct.count}}</span>
     <span class="cart-row__cell cart-row__cell--price">{{cartProduct.price}}</span>
     <span class="cart-row__cell cart-row__cell--total">{{cartProduct.price * cartProduct.count}}</span>
-    <button class="cart-row__remove" type="button" aria-label="Remove from cart">
+    <button class="cart-row__remove" type="button" aria-label="Remove from cart" (click)="onDeleteCartProduct(cartProduct.id)">
       <fa-icon [icon]="faXMark" aria-hidden="true"></fa-icon>
     </button>
   </li>

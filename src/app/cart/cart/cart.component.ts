@@ -36,4 +36,12 @@ export class CartComponent implements OnInit {
   onPageChange(page: number): void {
     this.currentPage = page;
   }
+
+  /*TODO:  тут когда аутентификация будет нужно передавать не 1, а id usera*/
+  onDeleteCartProduct(productId: number): void {
+    this.cartService.removeCartProductById(1, productId).subscribe(updatedCart => {
+        this.cart = updatedCart;
+      }
+    )
+  }
 }

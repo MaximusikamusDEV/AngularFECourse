@@ -18,7 +18,8 @@
 
     <app-cart-product
       *ngFor="let cartProduct of pagedCartProducts"
-      [cartProduct]="cartProduct">
+      [cartProduct]="cartProduct"
+    (deleteCartProduct)="onDeleteCartProduct($event)">
     </app-cart-product>
 
   </div>
